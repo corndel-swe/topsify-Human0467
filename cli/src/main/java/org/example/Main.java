@@ -1,7 +1,6 @@
 package org.example;
 
 
-import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,21 +12,21 @@ import com.fasterxml.jackson.core.type.TypeReference;
 public class Main {
     public static void main(String[] args) {
 
-        Path filePath;
+        Path inFilePath;
         List<String> lines = new ArrayList<>();
         String jsonString;
 
-        String fileName = "/reports/users.json";
-
         try {
-            filePath = Paths.get("reports", "users.json");
-            lines = Files.readAllLines(filePath);
-
+            // read the backup user data file
+            inFilePath = Paths.get("reports", "users.json");
+            lines = Files.readAllLines(inFilePath);
             jsonString = String.join("", lines);
-            ObjectMapper objectMapper = new ObjectMapper();
 
+            // map the string to a list of User objects
+            ObjectMapper objectMapper = new ObjectMapper();
             List<User> users = objectMapper.readValue(jsonString, new TypeReference<List<User>>() {});
 
+            // add an insert statement for each user object
             StringBuilder stringBuilder = new StringBuilder();
             for(User user : users){
                 stringBuilder.append(
@@ -38,8 +37,10 @@ public class Main {
                 );
             }
 
+            // write the file
             Path outPath = Paths.get("db", "seeds", "users.sql");
             Files.write(outPath, stringBuilder.toString().getBytes());
+
         } catch (Exception e) {
             System.out.println("something went wrong!!");
             e.printStackTrace();
@@ -48,7 +49,4 @@ public class Main {
 
     }
 
-    public static void getUsers(){
-
-    }
 }
