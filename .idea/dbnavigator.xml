@@ -31,6 +31,7 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="8e092142-787c-4b3f-b364-5c8ac5191bea" dataset="main.albums" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="8e092142-787c-4b3f-b364-5c8ac5191bea" dataset="main.users" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
