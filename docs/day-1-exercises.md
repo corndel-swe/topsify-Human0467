@@ -10,7 +10,7 @@ save them into .txt files.
 
 ## Exercise 1: Simple selects
 
-- [ ] Read the docs on
+- [x] Read the docs on
       [select queries](https://tech-docs.corndel.com/sql/select-queries.html)
 
 - [ ] Open `exercises/1a.sql` and type the SQL needed to solve the exercise.
