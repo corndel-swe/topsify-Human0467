@@ -4,8 +4,8 @@ artists.name AS "artist_name",
 albums.name AS "album_name",
 AVG(features.danceability) AS "average_danceability",
 AVG(features.energy) AS "average_energy",
-AVG(features.speechiness) AS "average_speechinness",
-AVG(features.acousticness) AS "avergae_acousticness",
+AVG(features.speechiness) AS "average_speechiness",
+AVG(features.acousticness) AS "average_acousticness",
 AVG(features.liveness) AS "average_liveness"
 FROM
 artists
