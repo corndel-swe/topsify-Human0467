@@ -20,8 +20,7 @@ async function fetchChartData(url) {
 function createScatterChart(ctx, data) {
   const chartData = data.map(album => ({
     x: new Date(album.release_date), // Ensure date parsing
-    y: album.average_loudness,
-    z: album.album_name
+    y: album.average_loudness
   }))
 
   new Chart(ctx, {
