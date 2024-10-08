@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const albumsGrid = document.getElementById('albumsGrid')
 
   if (albumsGrid) {
-    fetch('/reports/albums.json')
+    fetch('/reports/albums_v2.json')
       .then(response => response.json())
       .then(data => {
         displayAlbums(albumsGrid, data)
@@ -26,7 +26,7 @@ function displayAlbums(container, albums) {
 
     const albumArtist = document.createElement('p')
     albumArtist.className = 'album-card__artist'
-    albumArtist.textContent = `Artist ID: ${album.artist_id}`
+    albumArtist.textContent = `Artist: ${album.artist_name}`
 
     const albumReleaseDate = document.createElement('p')
     albumReleaseDate.className = 'album-card__release-date'
