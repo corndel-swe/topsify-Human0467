@@ -7,3 +7,11 @@
 -- Of course, these need to be foreign keys to the relevant tables
 
 -- Could you write the SQL to set up this junction table?
+
+DROP TABLE IF EXISTS track_genres;
+CREATE TABLE IF NOT EXISTS track_genres(
+    track_id TEXT,
+    genre_id TEXT,
+    FOREIGN KEY (track_id) REFERENCES tracks(id),
+    FOREIGN KEY (genre_id) REFERENCES genres(id)
+)
